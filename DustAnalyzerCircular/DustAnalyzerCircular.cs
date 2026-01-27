@@ -70,10 +70,10 @@ namespace DustAnalyzerCircular
         }
 
         /// <inheritdoc/>
-        public Task OpenAsync()
+        public async Task OpenAsync()
         {
+            await _modBusMaster.OpenAsync();
             _isConnect = _modBusMaster.IsConnect;
-            return _modBusMaster.OpenAsync();
         }
 
         /// <inheritdoc/>
